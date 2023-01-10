@@ -1,15 +1,17 @@
-import Head from 'next/head';
+// import Head from 'next/head';
 import React from 'react';
-import TestComp from '../ui_components/test';
+import BookCard from '../ui_components/BookCard';
+import { books } from '../lib/data'
 const Home = () => {
     return (
         <>
-            <Head>
-                <title>E-library</title>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-            </Head>
-            <TestComp />
+            <div>
+                {books.map(book => (
+                    <BookCard book={book} />
+                ))
+                }
+            </div>
         </>
-    );
+    )
 };
 export default Home;
